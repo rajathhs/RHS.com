@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Set the recipient email address
-    $recipient = "rajath.hs1991@gmail.com"; // Replace with your email address
+    $recipient = "your_email@example.com"; // Replace with your email address
 
     // Set the email subject
     $email_subject = "New message from $name: $subject";
@@ -32,12 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Thank you! Your message has been sent.";
     } else {
         http_response_code(500);
-        error_log("Failed to send email 500: " . error_get_last()['message']);
         echo "Oops! Something went wrong and we couldn't send your message.";
     }
 } else {
     http_response_code(403);
-    error_log("Failed to send email 403: " . error_get_last()['message']);
     echo "There was a problem with your submission, please try again.";
 }
 ?>
