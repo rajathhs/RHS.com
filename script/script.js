@@ -22,11 +22,11 @@ function loadSectionContent(elementId, filePath) {
 //     })
 //     .catch(error => console.error(error))
 
-loadSectionContent(heroElement, "main/hero.html");
+//loadSectionContent(heroElement, "main/hero.html");
 loadSectionContent(headerElement, "main/header.html");
 loadSectionContent(aboutMeElement, "main/aboutMe.html");
 loadSectionContent(factElement, "main/facts.html");
-loadSectionContent(skills, "main/skills.html");
+//loadSectionContent(skills, "main/skills.html");
 loadSectionContent(resume, "main/resume.html");
 loadSectionContent(cv, "main/DownloadCV.html");
 // loadSectionContent(portfolio, "main/portfolio.html");
