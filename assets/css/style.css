@@ -247,7 +247,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.5);
+  background: rgba(5, 13, 24, 0.1);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -692,6 +692,62 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
+
+/*--------------------------------------------------------------
+# DownloadCV
+--------------------------------------------------------------*/
+.downloadCV .icon-box {
+  margin-bottom: 20px;
+}
+
+.downloadCV .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: #149ddd;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid #149ddd;
+}
+
+.downloadCV .icon i {
+  color: #fff;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.downloadCV .icon-box .icon:hover {
+  background: #fff;
+}
+
+.downloadCV .icon-box .icon:hover i {
+  color: #149ddd;
+}
+
+.downloadCV .title {
+  margin-left: 80px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.downloadCV .title a {
+  color: #343a40;
+}
+
+.downloadCV .title a:hover {
+  color: #149ddd;
+}
+
+.downloadCV .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
 
 /*--------------------------------------------------------------
 # Services

@@ -28,6 +28,7 @@ loadSectionContent(aboutMeElement, "main/aboutMe.html");
 loadSectionContent(factElement, "main/facts.html");
 loadSectionContent(skills, "main/skills.html");
 loadSectionContent(resume, "main/resume.html");
+loadSectionContent(cv, "main/DownloadCV.html");
 // loadSectionContent(portfolio, "main/portfolio.html");
 // loadSectionContent(services, "main/services.html");
 // loadSectionContent(testimonials, "main/testimonials.html");
