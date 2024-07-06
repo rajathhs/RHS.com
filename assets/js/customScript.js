@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    const loadingMessage = document.querySelector('.loading');
+    const sentMessage = document.querySelector('.sent-message');
+    
     // Set your birth date (year, month, day)
     const birthDate = new Date(1991,5, 17); // Example: June 15, 1990
 
@@ -25,15 +29,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update the age when the page loads
     updateAge();
-});
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    var emailField = document.getElementById('email');
-    var email = emailField.value;
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    
-    if (!emailPattern.test(email)) {
-        alert('Please enter a valid email address.');
-        event.preventDefault();
-    }
+
+    contactForm.addEventListener('submit', async function(event) {
+
+        sentMessage.style.display = 'none'; // Hide sent message if previously shown
+
+        const formData = new FormData(contactForm);
+        const action = 'https://formspree.io/f/mpwazkll'; // Your Formspree endpoint
+
+        try {
+            const response = await fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            alert(response)
+
+            if (response.ok) {
+                sentMessage.style.display = 'block'; // Show success message
+                contactForm.reset(); // Clear the form fields
+            } else {
+                // Handle other status codes (if needed)
+                const errorData = await response.json();
+                console.error('Formspree Error:', errorData);
+                // Handle error scenario (show error message, etc.)
+            }
+        } catch (error) {
+            console.error('Fetch Error:', error);
+            // Handle fetch error (show error message, etc.)
+        }
+    });
+
 });
